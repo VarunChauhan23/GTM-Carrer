@@ -80,3 +80,14 @@
     object-fit: cover;
 }
 
+@media (max-width: 768px) {
+  .carrer-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .carrer-img-div img {
+    padding: 20px;
+    width: 90%;
+    height: 90%;
+  }
+}
