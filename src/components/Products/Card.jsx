@@ -1,5 +1,5 @@
 
-import './card.css'
+import './card.module.css'
 const Card = ({imgUrl,heading,text,price,animationType}) => {
  
   return (

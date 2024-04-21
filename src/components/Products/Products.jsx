@@ -1,5 +1,5 @@
 import Card from "./Card";
-import "./products.css";
+import "./products.module.css";
 import img1 from "../../assets/img1.png";
 
 const Products = () => {
