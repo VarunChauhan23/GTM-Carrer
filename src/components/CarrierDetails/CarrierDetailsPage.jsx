@@ -1,5 +1,5 @@
 
-import './CarrerDetailsPage.module.css'; // Import CSS file for styling
+import './CarrerDetailsPage.module.css'; 
 import ApplyCard from '../ApplyCard/ApplyCard.jsx'
 
 const CareerDetailsPage = ({ title, position, vacancies, experience, location, joining, overview, responsibilities, requirements }) => {

@@ -1,7 +1,6 @@
 
 import { useState } from 'react';
-import './ApplyCard.module.css'; // Import CSS file for styling
-
+import './ApplyCard.module.css'; 
 const ApplyCard = () => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
