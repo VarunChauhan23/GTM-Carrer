@@ -1,13 +1,13 @@
 
-import './CarrerDetailsPage.module.css'; 
+import styles from './CarrerDetailsPage.module.css'; 
 import ApplyCard from '../ApplyCard/ApplyCard.jsx'
 
 const CareerDetailsPage = ({ title, position, vacancies, experience, location, joining, overview, responsibilities, requirements }) => {
   return (
-    <div className="career-container">
-      <div className="career-details">
+    <div className={styles.careercontainer}>
+      <div className={styles.careerdetails}>
       <h2>{title}</h2>
-      <div className="details">
+      <div className={styles.details}>
         <div>
           <p>Position: {position}</p>
           <p>Vacancies: {vacancies}</p>
@@ -15,11 +15,11 @@ const CareerDetailsPage = ({ title, position, vacancies, experience, location, j
           <p>Location: {location}</p>
           <p>Joining Date: {joining}</p>
         </div>
-        <div className="overview">
+      <div className={styles.overview}>
           <h2>Overview</h2>
           <p>{overview}</p>
         </div>
-        <div className="responsibilities">
+        <div className={styles.responsibilities}>
           <h2>Responsibilities</h2>
           <ul>
             {responsibilities.map((resp, index) => (
@@ -27,7 +27,7 @@ const CareerDetailsPage = ({ title, position, vacancies, experience, location, j
             ))}
           </ul>
         </div>
-        <div className="requirements">
+        <div className={styles.requirements}>
           <h2>Requirements</h2>
           <ul>
             {requirements.map((req, index) => (
@@ -37,7 +37,7 @@ const CareerDetailsPage = ({ title, position, vacancies, experience, location, j
         </div>
       </div>
     </div>
-    <div className="apply">
+    <div className={styles.apply}>
       <ApplyCard/>
     </div>
     </div>

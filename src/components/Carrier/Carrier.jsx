@@ -1,4 +1,4 @@
-import './Carrier.module.css';
+import styles from './Carrier.module.css';
 import img1 from '../../assets/img1.png';
 import img2 from '../../assets/img2.png';
 import { useEffect, useState } from 'react';
@@ -16,16 +16,16 @@ const Carrier = () => {
 
     return (
         <div>
-            <div className="carrier-heading">
-                <h2 className="heading-text">Carrier</h2>
+            <div className={styles.carrierheading}>
+                <h2 className={styles.headingtext}>Carrier</h2>
             </div>
-            <div className="carrer-container">
-                <div className="carrer-content">
+            <div className={styles.carriercontainer}>
+                <div className={styles.carrercontent}>
                     <h2>Carrier at Good Tech Mind</h2>
                     <p>We invite you to supercharge your potential. Find what inspires and drives you. Find your spark.</p>
                     <button>Visit Our Carrier Page &rarr;</button>
                 </div>
-                <div className="carrer-img-div">
+                <div className={styles.carrerimgdiv}>
                     <img
                         src={images[currImg]}
                         alt={`Image ${currImg}`}

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Livvic&display=swap');
 
-.apply-card {
+.applycard {
   font-family: "Livvic", sans-serif;
     color: #0a0a0a;
     width: 4000px;
@@ -12,22 +12,22 @@
     box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
   }
   
-  .apply-card h2 {
+  .applycard h2 {
     margin-bottom: 20px;
     font-size: 36px;
   }
   
-  .form-group {
+  .formgroup {
     margin-bottom: 20px;
     padding-right: 20px;
   }
   
-  .form-group label {
+  .formgroup label {
     display: block;
     font-weight: bold;
   }
   
-  .form-group span {
+  .formgroup span {
     color: red;
   }
   
@@ -46,7 +46,7 @@
   }
   
 
-  .submit-btn {
+  .submitbtn {
     /* margin-top: 10px; */
     padding: 10px 20px;
     border: none;
@@ -61,13 +61,13 @@
     transition: background-color 0.3s ease-out, color 0.3s ease-out;
   }
   
-  .submit-btn:hover {
+  .submitbtn:hover {
     color: #f43e1c;
     background-color: transparent;
     border: 1px solid #f43e1c;
   }
   
-  .submit-btn::before {
+  .submittn::before {
     content: "";
     position: absolute;
     left: 0;
@@ -82,18 +82,18 @@
     align-items: center;
     z-index: 2;
   }
-  .submit-btn:hover::before {
+  .submitbtn:hover::before {
     left: -100%;
     /* background: transparent; */
   }
 
   @media screen and (max-width: 768px) {
-    .apply-card {
+    .applycard {
       max-width: 95%;
       padding: 10px;
     }
   
-    .form-group {
+    .formgroup {
       margin-bottom: 10px;
     }
   

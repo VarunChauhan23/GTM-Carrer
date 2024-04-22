@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-.career-container{
+.careercontainer{
   display: flex;
   justify-content: space-around;
 }
 
-.career-details {
+.careerdetails {
     padding: 20px;
     font-family: "Poppins", sans-serif;
   }
-  .career-details h2{
+  .careerdetails h2{
     font-size: 30px;
   }
   

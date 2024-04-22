@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import './ApplyCard.module.css'; 
+import styles from './ApplyCard.module.css'; 
 const ApplyCard = () => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -19,10 +19,10 @@ const ApplyCard = () => {
   };
 
   return (
-    <div className="apply-card">
+    <div className={styles.applycard}>
       <h2>Apply for the Position</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className={styles.formgroup}>
           <label htmlFor="fullName">
             Full Name<span>*</span>
           </label>
@@ -34,7 +34,7 @@ const ApplyCard = () => {
             required
           />
         </div>
-        <div className="form-group">
+      <div className={styles.formgroup}>
           <label htmlFor="email">
             Email<span>*</span>
           </label>
@@ -46,7 +46,7 @@ const ApplyCard = () => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className={styles.formgroup}>
           <label htmlFor="phone">
             Phone<span>*</span>
           </label>
@@ -58,7 +58,7 @@ const ApplyCard = () => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className={styles.formgroup}>
           <label htmlFor="coverLetter">
             Cover Letter<span>*</span>
           </label>
@@ -69,7 +69,7 @@ const ApplyCard = () => {
             required
           ></textarea>
         </div>
-        <div className="form-group">
+        <div className={styles.formgroup}>
           <label htmlFor="resume">
             Upload CV/Resume<span>*</span> (.PDF, .DOC, .DOCX)
           </label>
@@ -81,10 +81,10 @@ const ApplyCard = () => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className={styles.formgroup}>
           <p>By using this form you agree with the storage and handling of your data by this website.</p>
         </div>
-        <button type="submit" className='submit-btn'>Submit</button>
+        <button type="submit" className={styles.submitbtn}>Submit</button>
       </form>
     </div>
   );

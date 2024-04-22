@@ -1,5 +1,5 @@
 
-import './Services.module.css'; 
+import styles from './Services.module.css'; 
 import img1 from '../../assets/img1.png';
 const servicesData = [
   {
@@ -24,17 +24,17 @@ const servicesData = [
 const Services = () => {
   return (
     <>
-    <div className="services-heading">
-        <h2 className="heading-text">Services</h2>
+    <div className={styles.servicesheading}>
+        <h2 className={styles.headingtext}>Services</h2>
       </div>
     
-    <div className="services-container">
+    <div className={styles.servicescontainer}>
       {servicesData.map(service => (
-        <div key={service.id} className="service-card">
-          <div className="service-image">
+        <div key={service.id} className={styles.servicecard}>
+          <div className={styles.serviceimage}>
             <img src={service.image} alt={service.name} />
           </div>
-          <div className="service-details">
+          <div className={styles.servicedetails}>
             <h3>{service.name}</h3>
             <p><strong>Category:</strong> {service.category}</p>
             <p><strong>Subcategory:</strong> {service.subcategory}</p>

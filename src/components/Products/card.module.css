@@ -10,7 +10,7 @@
   border-radius: 10px;
   overflow: hidden;
 }
-.card-content{
+.cardcontent{
   padding: 0px 20px;
   }
 .forward-side{
@@ -62,22 +62,22 @@
   animation-delay: 0.6s;
 }
 
-.card-image {
+.cardimage {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-.card-heading,
-.card-text,
-.card-price,
-.read-more-btn {
+.cardheading,
+.cardtext,
+.cardprice,
+.readmorebtn {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.card-heading {
+.cardheading {
   margin: 0px;
   padding-top: 10px;
   font-size: 24px;
@@ -85,25 +85,25 @@
   font-weight: 600;
 }
 
-.card-text {
+.cardtext {
   margin-top: 10px;
   font-size: 16px;
   color: #666666;
 }
 
-.card-price {
+.cardprice {
   margin-top: 10px;
   font-size: 20px;
   color: #333333;
 }
 
-.btn-container{
+.btncontainer{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.read-more-btn {
+.readmorebtn {
   /* margin-top: 10px; */
   padding: 10px 20px;
   border: none;
@@ -118,14 +118,14 @@
   transition: background-color 0.3s ease-out, color 0.3s ease-out;
 }
 
-.read-more-btn:hover {
+.readmore-btn:hover {
   color: #f43e1c;
   background-color: transparent;
   border-top: 1px solid #f43e1c;
   border-bottom: 1px solid #f43e1c;
 }
 
-.read-more-btn::before {
+.readmorebtn::before {
   content: "";
   position: absolute;
   left: 0;
@@ -141,7 +141,7 @@
   z-index: 2;
 }
 
-.read-more-btn:hover::before {
+.readmorebtn:hover::before {
   left: -100%;
   /* background: transparent; */
 }

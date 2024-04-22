@@ -2,26 +2,24 @@
 
 
 
-.services-heading {
+.servicesheading {
     text-align: center;
     position: relative; 
     margin: 10px auto; 
   }
   
   
-  .heading-text{
+  .headingtext{
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-size: 36px;
     color: #333333;
   }
+ 
   
   
-  
-  
-  
-  .services-heading::before,
-  .services-heading::after {
+  .servicesheading::before,
+  .servicesheading::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -34,22 +32,22 @@
     margin-right: 6%;
   }
   
-  .services-heading::before {
+  .servicesheading::before {
     left: 0;
   }
   
-  .services-heading::after {
+  .servicesheading::after {
     right: 0;
   }
   
-.services-container {
+.servicescontainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
 }
 
-.service-card {
+.servicecard {
     width: 95%;
     margin: 20px auto; 
     border: 1px solid #ccc;
@@ -61,41 +59,41 @@
     font-family: "Poppins", sans-serif;
 }
 
-.service-image {
+.serviceimage {
     flex: 1;
 }
 
-.service-image img {
+.serviceimage img {
     width: 100%;
     height: 100%;
 }
 
-.service-details {
+.servicedetails {
     flex: 2;
     padding: 20px;
 }
 
-.service-details h3 {
+.servicedetails h3 {
     margin-top: 0;
 }
 
-.service-details p {
+.servicedetails p {
     margin: 10px 0;
 }
 
 
 @media only screen and (max-width: 768px) {
-    .service-card {
+    .servicecard {
         flex-direction: column;
         align-items: center;
     }
 
-    .service-image{
+    .serviceimage{
         flex: auto;
         width: 100%;
     }
 
-    .service-details {
+    .servicedetails {
       width: 90%;
     }
 }

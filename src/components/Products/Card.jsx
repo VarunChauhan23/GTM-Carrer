@@ -1,16 +1,16 @@
 
-import './card.module.css'
+import styles from './card.module.css'
 const Card = ({imgUrl,heading,text,price,animationType}) => {
  
   return (
-    <div className={`card ${animationType}`}>
-        <img src={imgUrl} alt="Card" className='card-image'/>
-        <div className='card-content'>
-        <h2 className='card-heading'>{heading}</h2>
-        <p className='card-text'>{text}</p>
-        <p className='card-price'>Price: ₹{price}</p>
-        <div className='btn-container'>
-        <button className='read-more-btn'>READ MORE</button>
+    <div className={styles.card}>
+        <img src={imgUrl} alt="Card" className={styles.cardimage}/>
+        <div className={styles.cardcontent}>
+        <h2 className={styles.cardheading}>{heading}</h2>
+        <p className={styles.cardtext}>{text}</p>
+        <p className={styles.cardprice}>Price: ₹{price}</p>
+        <div className={styles.btncontainer}>
+        <button className={styles.readmorebtn}>READ MORE</button>
         </div>
         
         </div>

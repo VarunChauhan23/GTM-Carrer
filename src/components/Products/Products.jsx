@@ -1,5 +1,5 @@
 import Card from "./Card";
-import "./products.module.css";
+import styles from "./products.module.css";
 import img1 from "../../assets/img1.png";
 
 const Products = () => {
@@ -29,11 +29,11 @@ const Products = () => {
 
   return (
     <>
-      <div className="products-heading">
-        <h2 className="heading-text">Products</h2>
+      <div className={styles.productsheading}>
+        <h2 className={styles.headingtext}>Products</h2>
       </div>
 
-      <div className="card-container">
+      <div className={styles.cardcontainer}>
         <Card
           imgUrl={cardsData[0].imageUrl}
           heading={cardsData[0].heading}
@@ -57,8 +57,8 @@ const Products = () => {
         />
       </div>
 
-      <div className="view-all-btn-container">
-        <button className="view-all-btn">view all</button>
+      <div className={styles.viewallbtncontainer}>
+        <button className={styles.viewallbtn}>view all</button>
       </div>
     </>
   );
