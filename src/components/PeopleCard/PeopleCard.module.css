@@ -3,7 +3,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  margin-bottom: 15%;
+  margin-bottom: 20%;
 }
 .bgimg {
   /* position: absolute; */
@@ -20,9 +20,19 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  top: 80%;
-  width: 30%;
-  /* height: 30%; */
+  top: 60%;
+  height: 80%;
+}
+.cardname{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: -40%; 
+  left: 0;
+}
+.cardname h2, .cardname p {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
 }
 
 .peoplecontainer {
@@ -61,7 +71,7 @@
 }
 
 @media (max-width: 768px) {
-  .peoplecontainer {
+  .people-container {
     display: flex;
     flex-direction: column;
   }
