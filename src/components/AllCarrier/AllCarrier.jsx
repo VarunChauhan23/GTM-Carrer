@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from React Router
+import { Link } from "react-router-dom";
 import styles from "./Philosophy.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -9,33 +9,52 @@ import DepartmentFadeMenu from "./DepartmentFadeMenu";
 
 function AllCarrier() {
   const [jobs, setJobs] = useState([]);
-
+  const [selectedState, setSelectedState] = useState(null);
+  const [selectedDepartment, setSelectedDepartment] = useState(null);
   useEffect(() => {
     AOS.init({ duration: "1000" });
-    fetchJobs();
-  }, []);
-
-  const fetchJobs = async () => {
-    try {
-      const response = await fetch("https://gtm-backend.onrender.com/api/getalljobs");
-      const data = await response.json();
-      if (data.success) {
-        setJobs(data.data);
-      } else {
-        console.error("Failed to fetch jobs:", data.message);
+    fetchJobs(selectedState, selectedDepartment);
+    const fetchJobs = async (state, department) => {
+      try {
+        const response = await fetch("https://gtm-backend.onrender.com/api/getalljobs");
+        const data = await response.json();
+        if (data.success) {
+          let filteredJobs = data.data;
+          if (state) {
+            filteredJobs = filteredJobs.filter(job => normalizeString(job.joblocation) === normalizeString(state));
+          }
+          if (department) {
+            filteredJobs = filteredJobs.filter(job => normalizeString(job.department) === normalizeString(department));
+          }
+          setJobs(filteredJobs);
+        } else {
+          console.error("Failed to fetch jobs:", data.message);
+        }
+      } catch (error) {
+        console.error("Error fetching jobs:", error);
       }
-    } catch (error) {
-      console.error("Error fetching jobs:", error);
-    }
+    };
+  }, [selectedState, selectedDepartment]);
+
+  const handleStateSelect = (state) => {
+    setSelectedState(state);
+  };
+
+  const handleDepartmentSelect = (department) => {
+    setSelectedDepartment(department);
+  };
+
+  const normalizeString = (str) => {
+    return str.toLowerCase().replace(/\s/g, "");
   };
 
   return (
     <div>
-     <div className="selectState">
+      <div className="selectState">
         <h4>Filter By: </h4>
-     <StateFadeMenu/>
-      <DepartmentFadeMenu/>
-     </div>
+        <StateFadeMenu onSelectState={handleStateSelect} />
+        <DepartmentFadeMenu onSelectDepartment={handleDepartmentSelect} />
+      </div>
       <div className={styles.cardContainer}>
         {jobs.map((job) => (
           <Link key={job._id} to={`/carrier/${job._id}`} className={styles.card1} data-aos="fade-right">
@@ -49,7 +68,6 @@ function AllCarrier() {
           </Link>
         ))}
       </div>
-     
     </div>
   );
 }

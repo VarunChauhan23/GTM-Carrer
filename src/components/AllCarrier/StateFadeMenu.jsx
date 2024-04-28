@@ -1,18 +1,19 @@
-
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-export default function StateFadeMenu() {
+export default function StateFadeMenu({ onSelectState }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleClose = (state) => {
     setAnchorEl(null);
+    onSelectState(state);
   };
 
   return (
@@ -36,11 +37,16 @@ export default function StateFadeMenu() {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose}>Delhi</MenuItem>
-        <MenuItem onClick={handleClose}>Rajasthan</MenuItem>
-        <MenuItem onClick={handleClose}>Kolkata</MenuItem>
-        <MenuItem onClick={handleClose}>Uttar Pradesh</MenuItem>
+        <MenuItem onClick={() => handleClose('Churu')}>Churu</MenuItem>
+        <MenuItem onClick={() => handleClose('Jaipur')}>Jaipur</MenuItem>
+        <MenuItem onClick={() => handleClose('Kolkata')}>Kolkata</MenuItem>
+        <MenuItem onClick={() => handleClose('Uttar Pradesh')}>Uttar Pradesh</MenuItem>
       </Menu>
     </div>
   );
 }
+
+// PropTypes validation
+StateFadeMenu.propTypes = {
+  onSelectState: PropTypes.func.isRequired, // Validate onSelectState prop as a required function
+};

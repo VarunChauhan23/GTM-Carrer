@@ -1,18 +1,19 @@
-
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-export default function DepartmentFadeMenu() {
+export default function DepartmentFadeMenu(props) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleClose = (department) => {
     setAnchorEl(null);
+    props.onSelectDepartment(department);
   };
 
   return (
@@ -36,13 +37,18 @@ export default function DepartmentFadeMenu() {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose}>MERN stack web developer</MenuItem>
-        <MenuItem onClick={handleClose}>UI / UX Designer</MenuItem>
-        <MenuItem onClick={handleClose}>Word Press Web Developer</MenuItem>
-        <MenuItem onClick={handleClose}>Python web developert</MenuItem>
-        <MenuItem onClick={handleClose}>PHP Web Developert</MenuItem>
-        <MenuItem onClick={handleClose}>SEO</MenuItem>
+        <MenuItem onClick={() => handleClose('Software')}>Software</MenuItem>
+        <MenuItem onClick={() => handleClose('UI / UX Designer')}>UI / UX Designer</MenuItem>
+        <MenuItem onClick={() => handleClose('Word Press Web Developer')}>Word Press Web Developer</MenuItem>
+        <MenuItem onClick={() => handleClose('Python web developer')}>Python web developer</MenuItem>
+        <MenuItem onClick={() => handleClose('PHP Web Developer')}>PHP Web Developer</MenuItem>
+        <MenuItem onClick={() => handleClose('SEO')}>SEO</MenuItem>
       </Menu>
     </div>
   );
 }
+
+// PropTypes validation
+DepartmentFadeMenu.propTypes = {
+  onSelectDepartment: PropTypes.func.isRequired, // Validate onSelectState prop as a required function
+};
