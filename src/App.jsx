@@ -4,6 +4,8 @@ import ProductPage from "./Pages/ProductPage/ProductPage";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+import CarrierDetailsPage from "./components/CarrierDetails/CarrierDetailsPage";
+
 function App() {
   return (
     <Router>
@@ -11,6 +13,7 @@ function App() {
         <Route path="/" element={<AllComponets/>}/>
         <Route path="/product" element={<ProductPage/>} />
         <Route path="/product/:id" element={<IndividualProductPage/>} />
+        <Route path="/carrier/:id" element={<CarrierDetailsPage/>}/>
       </Routes>
     </Router>
   );

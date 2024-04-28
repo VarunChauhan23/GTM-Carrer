@@ -1,48 +1,47 @@
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import CareerDetailsComponent from './CarrierDetailsComponent';
 
-import styles from './CarrerDetailsPage.module.css'; 
-import ApplyCard from '../ApplyCard/ApplyCard.jsx'
+const CarrierDetailsPage = () => {
+  const { id } = useParams();
+  const [jobDetails, setJobDetails] = useState(null);
 
-const CareerDetailsPage = ({ title, position, vacancies, experience, location, joining, overview, responsibilities, requirements }) => {
+  useEffect(() => {
+    // Fetch job details from the API
+    fetch(`https://gtm-backend.onrender.com/api/getjobbyid/${id}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          setJobDetails(data.data);
+        } else {
+          // Handle error
+          console.error('Failed to fetch job details:', data.message);
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching job details:', error);
+      });
+  }, [id]);
+
   return (
-    <div className={styles.careercontainer}>
-      <div className={styles.careerdetails}>
-      <h2>{title}</h2>
-      <div className={styles.details}>
-        <div>
-          <p>Position: {position}</p>
-          <p>Vacancies: {vacancies}</p>
-          <p>Experience Required: {experience}</p>
-          <p>Location: {location}</p>
-          <p>Joining Date: {joining}</p>
-        </div>
-      <div className={styles.overview}>
-          <h2>Overview</h2>
-          <p>{overview}</p>
-        </div>
-        <div className={styles.responsibilities}>
-          <h2>Responsibilities</h2>
-          <ul>
-            {responsibilities.map((resp, index) => (
-              <li key={index}>{resp}</li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.requirements}>
-          <h2>Requirements</h2>
-          <ul>
-            {requirements.map((req, index) => (
-              <li key={index}>{req}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
+    <div>
+      {jobDetails ? (
+        <CareerDetailsComponent
+          title={jobDetails.title}
+          position={jobDetails.position}
+          vacancies={jobDetails.vacancies}
+          experience={jobDetails.experience + ' years'}
+          location={jobDetails.joblocation}
+          joining={jobDetails.joining}
+          overview={jobDetails.overview}
+          responsibilities={jobDetails.responsibilities}
+          requirements={jobDetails.requirements}
+        />
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
-    <div className={styles.apply}>
-      <ApplyCard/>
-    </div>
-    </div>
-    
   );
 };
 
-export default CareerDetailsPage;
+export default CarrierDetailsPage;

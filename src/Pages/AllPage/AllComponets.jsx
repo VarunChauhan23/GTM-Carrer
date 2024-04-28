@@ -1,10 +1,11 @@
 
 import Products from '../../components/Products/Products'
-import Carrier from '../../components/Carrier/Carrier'
+import Carrier from '../../components/CarrierHomepage/Carrier'
 import PeopleCard from '../../components/PeopleCard/PeopleCard'
-import CareerDetailsPage from '../../components/CarrierDetails/CarrierDetailsPage'
+import CareerDetailsPage from '../../components/CarrierDetails/CarrierDetailsComponent'
 import Services from '../../components/Services/Services'
 import ProductPage from '../ProductPage/ProductPage'
+import AllCarrier from '../../components/AllCarrier/AllCarrier'
 
 const AllComponets = () => {
   return (
@@ -12,7 +13,7 @@ const AllComponets = () => {
         <Products/>
       <Carrier/>
       <PeopleCard/>
-      <CareerDetailsPage
+      {/* <CareerDetailsPage
   title="Software Engineer"
   position="Full Stack Developer"
   vacancies={3}
@@ -31,9 +32,10 @@ const AllComponets = () => {
     "Proficiency in HTML, CSS, JavaScript, and React.js.",
     "Experience with back-end development frameworks such as Node.js or Django."
   ]}
-/>
+/> */}
 <Services/>
 <ProductPage/> 
+<AllCarrier/>
     </div>
   )
 }
