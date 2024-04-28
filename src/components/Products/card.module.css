@@ -9,6 +9,7 @@
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
+  margin: 20px;
 }
 .cardcontent{
   padding: 0px 20px;
@@ -89,6 +90,13 @@
   margin-top: 10px;
   font-size: 16px;
   color: #666666;
+}
+
+.card .cardtext {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical;
 }
 
 .cardprice {

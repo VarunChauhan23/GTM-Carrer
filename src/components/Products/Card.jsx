@@ -1,6 +1,7 @@
 
+import { Link } from 'react-router-dom'
 import styles from './card.module.css'
-const Card = ({imgUrl,heading,text,price,animationType}) => {
+const Card = ({imgUrl,heading,text,price,productId}) => {
  
   return (
     <div className={styles.card}>
@@ -10,7 +11,7 @@ const Card = ({imgUrl,heading,text,price,animationType}) => {
         <p className={styles.cardtext}>{text}</p>
         <p className={styles.cardprice}>Price: ₹{price}</p>
         <div className={styles.btncontainer}>
-        <button className={styles.readmorebtn}>READ MORE</button>
+        <Link to={`/product/${productId}`} className={styles.readmorebtn}>READ MORE</Link>
         </div>
         
         </div>
